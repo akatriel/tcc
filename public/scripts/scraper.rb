@@ -2,12 +2,15 @@ require 'httparty'
 require 'nokogiri'
 require 'json'
 
-#http response
+
+
+	#http response
 
 	page = HTTParty.get 'http://www.verizonwireless.com', verify: false
 	#Make Nokogiri object
 	parse_page = Nokogiri::HTML(page)
 
+#################### Phone Carousel ########################
 	images = []
 	makers = []
 	models = []
@@ -43,3 +46,10 @@ require 'json'
 	File.open("../../phone_images.txt", "w+") do |f|
 		package.map{ |line| f.puts(line) }
 	end
+
+
+############# Deals Carousel ################
+
+
+
+#############################################
