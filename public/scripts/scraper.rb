@@ -1,7 +1,7 @@
 require 'httparty'
 require 'nokogiri'
 require 'json'
-
+require 'byebug'
 #http response
 page = HTTParty.get 'http://www.verizonwireless.com'
 #Make Nokogiri object
@@ -12,9 +12,9 @@ makers = []
 models = []
 
 #parse phone carousel data
-image_nodes = parse_page.css('.phone-carousel').css('.phone-carousel-slide-wrapper')
+image_nodes = parse_page.css('li.phone-carousel-slide').css('img')
 #grab srcs by traversing through nodes pushes them to array images
-image_nodes.each{|node| images.push node.children.children[1].attributes['src'].to_s}
+image_nodes.each{|node| images.push node.attributes['data-src'].to_s unless node.attributes['data-src'].to_s == ""}
 
 #grabs maker and model
 text_nodes = parse_page.css('.phone-carousel').css('.phone-carousel-slide-wrapper').children.children.css('a > span')
