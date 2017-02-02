@@ -42,9 +42,9 @@ img {
 		display: inline-block;
 		li {
 			border-color: #CF0608;
-			.active {
-				background: #CF0608 !important;// Not overriding bootsrap! 
-			}	
+			&.active {
+				background: #CF0608; 
+			}		
 		}
 	}
 	.carousel-control {

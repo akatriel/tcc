@@ -36,8 +36,8 @@ img {
     display: inline-block; }
     #carousel .carousel-indicators li {
       border-color: #CF0608; }
-      #carousel .carousel-indicators li .active {
-        background: #CF0608 !important; }
+      #carousel .carousel-indicators li.active {
+        background: #CF0608; }
   #carousel .carousel-control {
     background: rgba(0, 0, 0, 0.1);
     color: #CF0608; }

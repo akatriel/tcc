@@ -2,7 +2,7 @@
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
 	  		<% @images.each_with_index do |string, index| %>
-		   		<li data-target="#carousel" data-slide-to=<%= index %> ></li>
+		   		<li data-target="#carousel" <%= index == 0 ? "class= 'active'" : nil %> data-slide-to=<%= index %>></li>
 		    <% end %>
 	  </ol>
 

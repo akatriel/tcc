@@ -1,7 +1,7 @@
 require 'httparty'
 require 'nokogiri'
 require 'json'
-require 'byebug'
+
 #http response
 page = HTTParty.get 'http://www.verizonwireless.com'
 #Make Nokogiri object
@@ -31,3 +31,4 @@ end
 File.open("phone_images.txt", "w+") do |f|
 	package.map{ |line| f.puts(line) }
 end
+
